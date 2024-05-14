@@ -1,0 +1,46 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import norm, binom, poisson
+
+probability_heads = 0.5 
+probability_tails = 1 - probability_heads
+
+n_trials = 10
+binomial_distribution = binom(n_trials, probability_heads)
+x_binomial = np.arange(0, n_trials+1)
+pmf_binomial = binomial_distribution.pmf(x_binomial)
+
+mean = 0
+std_dev = 1
+normal_distribution = norm(mean, std_dev)
+x_normal = np.linspace(-3, 3, 100)
+pdf_normal = normal_distribution.pdf(x_normal)
+
+lambda_poisson = 5
+poisson_distribution = poisson(lambda_poisson)
+x_poisson = np.arange(0, 15)
+pmf_poisson = poisson_distribution.pmf(x_poisson)
+
+plt.figure(figsize=(15, 5))
+
+plt.subplot(1, 3, 1)
+plt.bar(x_binomial, pmf_binomial)
+plt.title('Binomial Distribution')
+plt.xlabel('Number of Heads')
+plt.ylabel('Probability')
+
+plt.subplot(1, 3, 2)
+plt.plot(x_normal, pdf_normal)
+plt.title('Normal Distribution')
+plt.xlabel('x')
+plt.ylabel('Probability Density')
+
+plt.subplot(1, 3, 3)
+plt.bar(x_poisson, pmf_poisson)
+plt.title('Poisson Distribution')
+plt.xlabel('Number of Events')
+plt.ylabel('Probability')
+
+plt.tight_layout()
+plt.show()
+

@@ -1,0 +1,11 @@
+clc
+n=input("Enter number of rows of matrix : ")
+m=input("Enter number of columns of matrix : ")
+A=zeros(n,m)
+disp("Enter matrix")
+for i=1:n
+    for j=1:m
+        A(i,j)=input("Enter element A(" + string(i) + "," + string(j) + ") of matrix : ") 
+    end
+end
+disp("Transpose of given matrix is", A')

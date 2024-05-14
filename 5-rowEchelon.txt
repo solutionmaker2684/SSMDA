@@ -1,0 +1,11 @@
+clc
+m=input("Enter number of rows : ")
+n=input("Enter number of columns : ")
+A=zeros(m,n)
+for i=1:m
+    for j=1:n
+        A(i,j)=input("Enter A(" + string(i) + "," + string(j) + ") element : ")
+    end
+end
+X=rref(A)
+disp("Row Echelon Form = ", X)

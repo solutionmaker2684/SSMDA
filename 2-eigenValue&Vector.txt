@@ -1,0 +1,17 @@
+clc
+n=input("Enter number of rows of matrix : ")
+m=input("Enter number of columns of matrix : ")
+A=zeros(n,m)
+disp("Enter matrix")
+for i=1:n
+    for j=1:m
+        A(i,j)=input("Enter element A(" + string(i) + "," + string(j) + ") of matrix : ") 
+    end
+end
+if (n==m) then
+    [eigenVectors, eigenValues] = spec(A)
+    disp("Eigen values", eigenValues)
+    disp("Eigen vectors", eigenVectors)
+else 
+    disp("The matrix is not square. Eigenvalues and eigenvectors cannot be computed.")
+end

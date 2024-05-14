@@ -1,0 +1,36 @@
+clc
+function[]=multiplication()
+    n=input("Enter number of rows of first matrix : ")
+    m=input("Enter number of columns of first matrix : ")
+    A=zeros(n,m)
+    disp("First matrix")
+    for i=1:n
+        for j=1:m
+            A(i,j)=input("Enter element A(" + string(i) + "," + string(j) + ") of first matrix : ") 
+        end
+    end
+    p=input("Enter number of rows of second matrix : ")
+    q=input("Enter number of columns of second matrix : ")
+    B=zeros(p,q)
+    disp("Second matrix")
+    for i=1:p
+        for j=1:q
+            B(i,j)=input("Enter element B(" + string(i) + "," + string(j) + ") of second matrix : ") 
+        end
+    end
+    if (m==p) then
+        C=zeros(n,q)
+        for i=1:n
+            for j=1:q
+                sum = 0
+                for k=1:m
+                    sum = sum + A(i,k)*B(k, j)
+                end
+                C(i,j) = sum
+            end
+        end
+        disp("The resultant matrix is",C)
+    else 
+        disp("Matrix multiplication is not possible");
+    end
+endfunction

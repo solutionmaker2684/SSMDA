@@ -1,0 +1,19 @@
+clc
+A=[1,2,3;12,2,5;5,3,1];
+B=[5,1,4;5,8,2;9,4,7];
+C=[6,7,2;1,9,6;5,3,4]; 
+disp("Commutative Property");
+X=A*B;   
+disp(X);
+X=B*A;
+disp(X);
+disp("Associative Property");
+X=(A*B)*C;
+disp(X);
+X=A*(B*C);
+disp(X);    
+disp("Distributive Property");
+X=(A+B)*C;
+disp(X);
+X=(A*C)+(B*C);
+disp(X);

@@ -1,0 +1,11 @@
+clc
+function y=f(x)
+    y=x^3+2*x^2+5*x+4
+endfunction
+x1= [0:5:10]
+y1=f(x1)
+plot (x1, y1)
+x=poly(0,"x");
+y=x^3+2*x^2+5*x+4
+disp("First derivative: ", derivat(y))
+disp("Second derivative: ", derivat(derivat(y)))
